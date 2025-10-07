@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Virgen Jump</title>
+    <meta name="description" content="Virgen Jump - endless runner with daily leaderboard" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <h1>Virgen Jump</h1>
+      </header>
+
+      <main class="content">
+        <section id="intro" class="card intro">
+          <div class="intro-left">
+            <div class="intro-asset">
+              <img src="/assets/character.png" alt="character" width="96" height="96" />
+            </div>
+            <h2>How to Play</h2>
+            <ul>
+              <li>Tap or press Space to jump.</li>
+              <li>Duck with Down Arrow while on ground.</li>
+              <li>Survive and beat daily high score.</li>
+            </ul>
+            <button id="playBtn" class="primary">Play</button>
+          </div>
+          <div class="intro-right">
+            <a class="opensea" href="https://opensea.io/collection/thevirgenclub" target="_blank" rel="noopener" aria-label="OpenSea collection">
+              <svg width="24" height="24" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg"><path fill="#2081E2" d="M600 0c331.4 0 600 268.6 600 600s-268.6 600-600 600S0 931.4 0 600 268.6 0 600 0z"/><path fill="#fff" d="M837.1 666.7c-9.6 0-17.7 8.1-17.7 17.7 0 9.6 8.1 17.7 17.7 17.7 9.6 0 17.7-8.1 17.7-17.7 0-9.6-8.1-17.7-17.7-17.7zM537.5 692.7c0 0 0 0 0 0 0 56.2 45.6 101.9 101.9 101.9h133.3c72.7 0 133.3-60.6 133.3-133.3 0-72.7-60.6-133.3-133.3-133.3H612.5v-98.6l-83.3 125.2V692.7z"/></svg>
+              <span>OpenSea: The Virgen Club</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="game" class="game hidden">
+          <div class="game-box">
+            <canvas id="gameCanvas" width="800" height="300"></canvas>
+            <div id="gameOverlay" class="overlay hidden">
+              <div class="overlay-card">
+                <h2>Game Over!</h2>
+                <p>Your Score: <span id="finalScore">0</span> | Time: <span id="finalTime">0</span>s</p>
+                <form id="submitForm" class="overlay-form">
+                  <input type="text" id="twitter" placeholder="Twitter (with @)" maxlength="40" />
+                  <input type="text" id="wallet" placeholder="Wallet Address" maxlength="100" />
+                  <div class="overlay-actions">
+                    <button type="submit" class="btn primary">Submit Score</button>
+                    <a id="tweetLink" target="_blank" rel="noopener" class="btn info">Share on Twitter</a>
+                    <button id="retryBtn" type="button" class="btn success">Play Again</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <section id="leaderboards" class="grids in-game">
+          <div class="card">
+            <h3>Daily Leaderboard</h3>
+            <table id="dailyTable">
+              <thead>
+                  <tr><th>#</th><th>Twitter</th><th>Score</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h3>Daily Winners</h3>
+            <table id="winnersTable">
+              <thead>
+                   <tr><th>Date</th><th>Twitter</th><th>Score</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Created by <a href="https://x.com/takoshieth" target="_blank" rel="noopener">@takoshieth</a> ❤️ for the Virgen Club <a href="https://x.com/virgenfts" target="_blank" rel="noopener">@virgenfts</a></span>
+      </footer>
+    </div>
+
+    <script src="/game.js"></script>
+  </body>
+  </html>
+
+
