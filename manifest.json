@@ -1,0 +1,33 @@
+{
+    "frame": {
+      "name": "Virgen Jump",
+      "version": "1",
+      "iconUrl": "https://app.virgenclub.xyz/icon.png",
+      "homeUrl": "https://app.virgenclub.xyz",
+      "imageUrl": "https://app.virgenclub.xyz/image.png",
+      "buttonTitle": "Open Virgen Jump",
+      "splashImageUrl": "https://app.virgenclub.xyz/splash.png",
+      "splashBackgroundColor": "#6200EA",
+      "webhookUrl": "https://app.virgenclub.xyz/api/webhook",
+      "subtitle": "Play, earn, and jump into the Virgen ecosystem!",
+      "description": "Virgen Jump is a social mini-app built for the Virgen Club community.  Connect your wallet, play quick challenges, and earn rewards directly within Farcaster.",
+      "primaryCategory": "games",
+      "tags": [
+        "game",
+        "play2earn",
+        "virgen",
+        "virtual",
+        "base"
+      ],
+      "heroImageUrl": "https://app.virgenclub.xyz/hero.png",
+      "screenshotUrls": [
+        "https://app.virgenclub.xyz/screenshot1.png"
+      ],
+      "tagline": "Jump into the play and rise"
+    },
+    "accountAssociation": {
+      "header": "eyJmaWQiOjQxOTMyNCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDczNzU2MjUyRTU1NkY1QmIzRjFhYTI4YjVmMEE0MzcxNTBjNDQ4QmIifQ",
+      "payload": "eyJkb21haW4iOiJhcHAudmlyZ2VuY2x1Yi54eXoifQ",
+      "signature": "MHg4ZmVmMjg2MzljZTE0ODg5NTE2NWFjNWFlMDA5NGM2MDU2NmU4NmE3NzFmOTNmY2I4NGYxNThlMDQ1YTEyNzZlNTQ4ZjE2MjU1NTdmNmJhMDc3NTlhNGNjNDFmYTljNzVlMDJjNGM1MTc5MGQzZDBkZTcxOWU2ZDA2OWNlZDc3MDFi"
+    }
+  }
