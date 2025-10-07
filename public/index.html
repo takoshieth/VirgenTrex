@@ -32,7 +32,10 @@
           </div>
           <div class="intro-right">
             <a class="opensea" href="https://opensea.io/collection/thevirgenclub" target="_blank" rel="noopener" aria-label="OpenSea collection">
-              <svg width="24" height="24" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg"><path fill="#2081E2" d="M600 0c331.4 0 600 268.6 600 600s-268.6 600-600 600S0 931.4 0 600 268.6 0 600 0z"/><path fill="#fff" d="M837.1 666.7c-9.6 0-17.7 8.1-17.7 17.7 0 9.6 8.1 17.7 17.7 17.7 9.6 0 17.7-8.1 17.7-17.7 0-9.6-8.1-17.7-17.7-17.7zM537.5 692.7c0 0 0 0 0 0 0 56.2 45.6 101.9 101.9 101.9h133.3c72.7 0 133.3-60.6 133.3-133.3 0-72.7-60.6-133.3-133.3-133.3H612.5v-98.6l-83.3 125.2V692.7z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#2081E2" d="M600 0c331.4 0 600 268.6 600 600s-268.6 600-600 600S0 931.4 0 600 268.6 0 600 0z"/>
+                <path fill="#fff" d="M837.1 666.7c-9.6 0-17.7 8.1-17.7 17.7 0 9.6 8.1 17.7 17.7 17.7 9.6 0 17.7-8.1 17.7-17.7 0-9.6-8.1-17.7-17.7-17.7zM537.5 692.7c0 0 0 0 0 0 0 56.2 45.6 101.9 101.9 101.9h133.3c72.7 0 133.3-60.6 133.3-133.3 0-72.7-60.6-133.3-133.3-133.3H612.5v-98.6l-83.3 125.2V692.7z"/>
+              </svg>
               <span>OpenSea: The Virgen Club</span>
             </a>
           </div>
@@ -59,24 +62,24 @@
           </div>
 
           <section id="leaderboards" class="grids in-game">
-          <div class="card">
-            <h3>Daily Leaderboard</h3>
-            <table id="dailyTable">
-              <thead>
-                  <tr><th>#</th><th>Twitter</th><th>Score</th></tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-          <div class="card">
-            <h3>Daily Winners</h3>
-            <table id="winnersTable">
-              <thead>
-                   <tr><th>Date</th><th>Twitter</th><th>Score</th></tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
+            <div class="card">
+              <h3>Daily Leaderboard</h3>
+              <table id="dailyTable">
+                <thead>
+                    <tr><th>#</th><th>Twitter</th><th>Score</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="card">
+              <h3>Daily Winners</h3>
+              <table id="winnersTable">
+                <thead>
+                     <tr><th>Date</th><th>Twitter</th><th>Score</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
           </section>
         </section>
       </main>
@@ -87,7 +90,17 @@
     </div>
 
     <script src="/game.js"></script>
-  </body>
-  </html>
 
+    <!-- ✅ FARCASTER MINI-APP SDK -->
+    <script type="module">
+      import { sdk } from "https://cdn.jsdelivr.net/npm/@farcaster/mini-apps-sdk/+esm";
+
+      // ready sdk
+      window.onload = () => {
+        sdk.actions.ready();
+        console.log("✅ Farcaster SDK ready() called — splash screen can close now.");
+      };
+    </script>
+  </body>
+</html>
 
