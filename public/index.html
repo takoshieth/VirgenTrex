@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Virgen Jump</title>
     <meta name="description" content="Virgen Jump - endless runner with daily leaderboard" />
+
+    <!-- ✅ FARCASTER EMBED META -->
+    <meta name="fc:miniapp" content='{
+      "version": "next",
+      "imageUrl": "https://app.virgenclub.xyz/embed-image",
+      "button": {
+        "title": "Play Now",
+        "action": {
+          "type": "launch_miniapp",
+          "name": "Virgen Jump",
+          "url": "https://app.virgenclub.xyz"
+        }
+      }
+    }' />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
+
   <body>
     <div id="app">
       <header class="topbar">
@@ -66,7 +82,7 @@
               <h3>Daily Leaderboard</h3>
               <table id="dailyTable">
                 <thead>
-                    <tr><th>#</th><th>Twitter</th><th>Score</th></tr>
+                  <tr><th>#</th><th>Twitter</th><th>Score</th></tr>
                 </thead>
                 <tbody></tbody>
               </table>
@@ -75,7 +91,7 @@
               <h3>Daily Winners</h3>
               <table id="winnersTable">
                 <thead>
-                     <tr><th>Date</th><th>Twitter</th><th>Score</th></tr>
+                  <tr><th>Date</th><th>Twitter</th><th>Score</th></tr>
                 </thead>
                 <tbody></tbody>
               </table>
@@ -94,28 +110,10 @@
     <!-- ✅ FARCASTER MINI-APP SDK -->
     <script type="module">
       import { sdk } from "https://cdn.jsdelivr.net/npm/@farcaster/mini-apps-sdk/+esm";
-
-      // ready sdk
       window.onload = () => {
         sdk.actions.ready();
         console.log("✅ Farcaster SDK ready() called — splash screen can close now.");
       };
-<meta name="fc:miniapp" content='{
-  "version":"next",
-  "imageUrl":"https://app.virgenclub.xyz/embed-image",
-  "button":{
-      "title":"Play Now",
-      "action":{
-      "type":"launch_miniapp",
-      "name":"Virgen Jump",
-      "url":"https://app.virgenclub.xyz"
-      }
-  }
-  }' />      
     </script>
   </body>
 </html>
-
-
-</html>
-
