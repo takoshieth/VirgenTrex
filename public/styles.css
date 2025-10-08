@@ -50,3 +50,8 @@ th, td { text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); padd
 }
 
 
+
+
+/* Mobile touch fixes */
+button, .btn, .primary { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+canvas { touch-action: none; }
