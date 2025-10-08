@@ -17,7 +17,7 @@
     "splashImageUrl": "https://app.virgenclub.xyz/splash.png",
     "splashBackgroundColor": "#6200EA",
     "webhookUrl": "https://app.virgenclub.xyz/api/webhook",
-    "subtitle": "Play, earn, and jump into the Virgen ecosystem!",
+    "subtitle": "Play,earn and jump",
     "description": "Virgen Jump is a social mini-app built for the Virgen Club community. Connect your wallet, play quick challenges, and earn rewards directly within Farcaster.",
     "screenshotUrls": [
       "https://app.virgenclub.xyz/screenshot1.png"
@@ -27,8 +27,9 @@
     "heroImageUrl": "https://app.virgenclub.xyz/hero.png",
     "tagline": "Jump into the play and rise",
     "ogTitle": "Virgen Jump",
-    "ogDescription": "Play, earn, and rise in the Virgen ecosystem!",
+    "ogDescription": "Play,earn and rise",
     "ogImageUrl": "https://app.virgenclub.xyz/hero.png",
     "noindex": false
   }
 }
+
