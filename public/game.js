@@ -2,6 +2,26 @@
 (function() {
   const canvas = document.getElementById('gameCanvas');
   const ctx = canvas.getContext('2d');
+  // Responsive canvas sizing
+  function resizeCanvas() {
+    const ratio = window.devicePixelRatio || 1;
+    const displayWidth = Math.min(canvas.clientWidth || 800, window.innerWidth);
+    const desiredWidth = Math.floor(displayWidth * ratio);
+    const desiredHeight = Math.floor((300/800) * desiredWidth); // keep 800x300 aspect
+    if (canvas.width !== desiredWidth || canvas.height !== desiredHeight) {
+      canvas.width = desiredWidth;
+      canvas.height = desiredHeight;
+      state.groundY = canvas.height - Math.floor(58 * ratio);
+      // scale character size with ratio to keep consistent on high-DPI
+      const baseScale = desiredWidth / (800 * ratio);
+      state.character.w = Math.floor(70 * ratio * baseScale);
+      state.character.h = Math.floor(76 * ratio * baseScale);
+      state.character.y = state.groundY - state.character.h;
+    }
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
   const playBtn = document.getElementById('playBtn');
   const intro = document.getElementById('intro');
   const game = document.getElementById('game');
@@ -109,12 +129,12 @@
       state.jumpPressed = false;
     }
   }, { passive: false });
-  window.addEventListener('touchstart', (e) => {
+  canvas.addEventListener('touchstart', (e) => {
     e.preventDefault();
     if (state.character.onGround) jump();
     state.jumpPressed = true;
   }, { passive: false });
-  window.addEventListener('touchend', () => {
+  canvas.addEventListener('touchend', () => {
     state.jumpPressed = false;
   }, { passive: true });
 
@@ -391,15 +411,18 @@
     if (section === 'game') game.classList.remove('hidden');
   }
 
-  playBtn.addEventListener('click', () => {
+  
+  function startGameFromUI(e){
+    if (e) { try{ e.preventDefault(); }catch(_){} }
     showSection('game');
     overlay.classList.add('hidden');
     resetGame();
+  }
+['click','touchend','pointerup'].forEach((ev)=>{
+    playBtn.addEventListener(ev, startGameFromUI, {passive:false});
   });
-  retryBtn.addEventListener('click', () => {
-    showSection('game');
-    overlay.classList.add('hidden');
-    resetGame();
+  ['click','touchend','pointerup'].forEach((ev)=>{
+    retryBtn.addEventListener(ev, startGameFromUI, {passive:false});
   });
 
   submitForm.addEventListener('submit', async (e) => {
